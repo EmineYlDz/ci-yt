@@ -52,5 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'HomeController/login';
 $route['login'] = 'HomeController/login';
 $route['singup'] = 'HomeController/singup';
+
+$route['save'] = 'HomeController/store';
+$route['users'] = 'HomeController/userList';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

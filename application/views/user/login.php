@@ -5,14 +5,14 @@
 </head>
 <body>
  <div class="login-signup-form animated fadeInDown">
-	 <div class="form">
+	 <div class="form"> 
 		 <h2 class="title">Login into your Account</h2>
-		 <form action="<?php echo base_url('ucheck')?>" method="post">
-			 <input type="email" name="email" placeholder="email"/>
-			 <input type="password" name="password" placeholder="*******"/>
+		 <form action="<?php echo base_url('checkuser')?>" method="post">
+			 <input type="email" name="email" required placeholder="email"/>
+			 <input type="password" name="password" required placeholder="*******"/>
 			 <button type="submit" class="btn btn-block">Login</button>
 			 <p class="message">
-				 Not Registered <a href="<?php echo base_url('signup') ?>">Create Account</a>
+				 Not Registered <a href="<?php echo base_url('singup') ?>">Create Account</a>
 			 </p>
 		 </form>
 	 </div>
