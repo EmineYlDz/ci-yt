@@ -42,11 +42,11 @@ class HomeController extends CI_Controller
     $this->load->view(view:'user/register');
     $this->load->view(view:'user/layouts/footer');	
   }
-  public function checkuser($email,$password)
+  public function checkuser()
   {
     $email = $this->input->post('email');
-    $password = md5($this->load->input->post('password'));
-    $checkuser = $this->um->checkuser($email,$password);
+    $passwor = md5($this->input->post('password'));
+    $checkuser = $this->um->checkuser($email,$passwor);
     if($checkuser){
       foreach($checkuser as $user);
       $this->session->set_userdata('name', $user->name);
@@ -62,6 +62,40 @@ class HomeController extends CI_Controller
   {
     $this->session->unset_userdata('email');
     
+  }
+  public function edit($id)
+	{
+		$data['user'] = $this->um->getuser($id);
+		$this->load->view(view:'user/layouts/header');
+		$this->load->view('user/edit', $data);
+		$this->load->view(view:'user/layouts/footer');
+
+	}
+  public function update($id)
+	{
+		$result = $this->um->update($id);
+    if($result){
+      $this->session->set_flashdata('success','User has been update');
+      return redirect(uri:'users');
+    }
+	}
+  public function destroy($id)
+  {
+    $result = $this->um->destroy($id);
+    if($result){
+      $this->session->set_flashdata('success','User has been delete');
+      return redirect(uri:'users');
+    }
+  }
+  public function my404()
+  {
+    $this->load->view(view:'errors/my404');
+  }
+  public function dashboard()
+  {
+    $this->load->view(view:'user/layouts/header');
+    $this->load->view(view:'user/layouts/dashboard');
+    $this->load->view(view:'user/layouts/footer');	
   }
 
 }

@@ -4,6 +4,13 @@
             <h1>Users</h1>
             <a href="<?php echo base_url('register') ?>" class="btn-add">Add new</a>
         </div>
+
+        <?php if($this->session->flashdata('success')){ ?>
+            <div class="alert">
+               <p> <?php echo $this->session->flashdata('success') ?></p>
+            </div>
+        <?php }?>
+
         <div class="card animated fadeInDown">
         <table>
             <thead>

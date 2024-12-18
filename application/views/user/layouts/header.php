@@ -15,8 +15,8 @@
                     Header
                 </div>
                 <div>
-                   <?php echo $this->session->userdata('name') ?>
-                   <a href="<?php echo base_url(uri:'logout')?>" class="btn btn-logout">Logout</a>
+                   <?php echo $this->session->userdata('name')     ?> 
+                   <a href="<?php echo base_url(uri:'login')?>" class="btn btn-logout">Logout</a>
                  </div>
             </header> 
        
