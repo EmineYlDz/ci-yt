@@ -55,5 +55,8 @@ $route['singup'] = 'HomeController/singup';
 
 $route['save'] = 'HomeController/store';
 $route['users'] = 'HomeController/userList';
+$route['register'] = 'HomeController/register';
+$route['checkuser'] = 'HomeController/checkuser';
+$route['logout'] = 'HomeController/logout';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

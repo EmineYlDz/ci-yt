@@ -20,10 +20,20 @@ class UserModel extends CI_Model
 			return false;
 		}
 	}
-	public function getalluser()
+	public function getAllUsers()
 	{
 		return $this->db->get('users')->result();
+
 	}
+	public function checkuser($email,$password)
+	{
+      $this->db->select('*')->from('users')
+	    ->where('email,$email')
+		->where('password',$password)->limit(1)->get()->result();
+	}
+	
+
+	
 }
 
 
